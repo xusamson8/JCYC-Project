@@ -1,0 +1,3 @@
+# to install, pip install -r requirements.txt
+requests
+beautifulsoup4
