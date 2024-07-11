@@ -3,7 +3,7 @@ import openai
 import json
 
 
-openai.api_key = 'insert OPENAI API key'
+openai.api_key = 'secret key'
 
 
 def load_faqs(file_path):
