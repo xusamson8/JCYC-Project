@@ -30,7 +30,7 @@ def ask_openai(question, context):
 
 def chatbot():
     faqs = load_faqs('jcyc-faq-data.json')  
-    context = "\n".join([f"Q: {faq['question']}\nA: {faq['answer']}" for faq in faqs])
+    context = "\n".join([f"Q: {faq['question']}\n {faq['answer']}" for faq in faqs])
 
     print("Welcome to the San Francisco JCYC FAQ chatbot! Ask me questions about JCYC!")
     while True:
