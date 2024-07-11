@@ -41,7 +41,7 @@ def chatbot():
         response = generate_response(user_question, faqs)
         if "Sorry" in response:
             response = ask_openai(user_question, context)
-        print(f"AI: {response}")
+        print(f"JCYC Bot: {response}")
 
 if __name__ == "__main__":
     chatbot()
