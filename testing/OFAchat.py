@@ -4,11 +4,11 @@ from webscraper import scrape, extract_info, extract_from_links
 from google.cloud import dialogflow
 
 # Set the path to your service account key file
-key_file_path = r'C:\Users\Spongebob\Downloads\ofa-chatbot-9ecc385d862d.json'
+key_file_path = r'C:\Users\Spongebob\Downloads\ofa-chatbot-0bbba6be0efe.json'
 
 # Set Google Cloud Project ID and Session ID
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file_path
-project_id = 'your-project-id'
+project_id = 'ofa-chatbot'
 session_id = 'unique-session-id'
 
 # Create a session client
