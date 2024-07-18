@@ -15,15 +15,15 @@
                 body: JSON.stringify({ message: userMessage })
             });
             const data = await response.json();
-            document.getElementById("chatbox").innerHTML += "<b>You:</b> " + userMessage + "<br><b>Bot:</b> " + data.response + "<br><br>";
+            document.getElementById("chatbox").innerHTML += "<b>You:</b> " + userMessage + "<br><b>JCYC Bot:</b> " + data.response + "<br><br>";
             document.getElementById("userMessage").value = '';
         }
     </script>
 </head>
 <body>
     <h1>Welcome to the OFA Terminal Chatbot!</h1>
-    <div id="chatbox" style="border: 1px solid black; padding: 10px; height: 300px; overflow-y: scroll;">
-        <p><b>Bot:</b> Hello! How can I assist you today?</p>
+    <div id="chatbox" style="border: 5px solid black; padding: 10px; height: 300px; overflow-y: scroll;">
+        <p><b>JCYC Bot:</b> Hello! How can I assist you today?</p>
     </div>
     <input type="text" id="userMessage" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
     <button onclick="sendMessage()">Send</button>

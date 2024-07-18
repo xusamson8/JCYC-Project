@@ -16,10 +16,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file_path
 project_id = 'ofa-chatbot'
 session_id = 'unique-session-id'
 
-# Create a session client
 session_client = dialogflow.SessionsClient()
 
-# Function to detect intent and get response from Dialogflow
 def detect_intent_texts(text):
     session = session_client.session_path(project_id, session_id)
     text_input = dialogflow.TextInput(text=text, language_code="en-US")
