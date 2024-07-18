@@ -2,9 +2,14 @@ import os
 import random
 from webscraper import scrape, extract_info, extract_from_links
 from google.cloud import dialogflow
+from flask import Flask, request, jsonify, render_template
+
+app = Flask(__name__)
 
 # Set the path to your service account key file
-key_file_path = r'C:\Users\lkuc3\Downloads\ofa-chatbot-36bcf1d0cb1d.json'
+key_file_path = '/Users/samsonxu/Downloads/ofa-chatbot-45dbb77a9825.json' 
+
+# Hadrian File Path: r'C:\Users\lkuc3\Downloads\ofa-chatbot-36bcf1d0cb1d.json'
 
 # Set Google Cloud Project ID and Session ID
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file_path
@@ -120,4 +125,8 @@ def main():
             print(f"Bot: {fulfillment_text}")
 
 if __name__ == '__main__':
-    main()
+    app.run(Debug=True)
+
+# flask
+# setuptools
+# google-cloud-dialogflow
