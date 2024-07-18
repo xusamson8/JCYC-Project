@@ -3,7 +3,7 @@ import openai
 import json
 
 
-openai.api_key = 'insert OPENAI API key'
+openai.api_key = 'secret key'
 
 
 def load_faqs(file_path):
@@ -30,7 +30,7 @@ def ask_openai(question, context):
 
 def chatbot():
     faqs = load_faqs('jcyc-faq-data.json')  
-    context = "\n".join([f"Q: {faq['question']}\nA: {faq['answer']}" for faq in faqs])
+    context = "\n".join([f"Q: {faq['question']}\n {faq['answer']}" for faq in faqs])
 
     print("Welcome to the San Francisco JCYC FAQ chatbot! Ask me questions about JCYC!")
     while True:
@@ -41,7 +41,7 @@ def chatbot():
         response = generate_response(user_question, faqs)
         if "Sorry" in response:
             response = ask_openai(user_question, context)
-        print(f"AI: {response}")
+        print(f"JCYC Bot: {response}")
 
 if __name__ == "__main__":
     chatbot()
