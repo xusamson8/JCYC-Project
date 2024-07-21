@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFA Terminal Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <title>OFA Questionnaire Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{{ url_for('static', filename='background.jpg') }}'); /* Add a background image here */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
     <script>
         async function sendMessage() {
             const userMessage = document.getElementById("userMessage").value;
@@ -15,17 +29,24 @@
                 body: JSON.stringify({ message: userMessage })
             });
             const data = await response.json();
-            document.getElementById("chatbox").innerHTML += "<b>You:</b> " + userMessage + "<br><b>JCYC Bot:</b> " + data.response + "<br><br>";
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += "<div class='message user-message'><b>You:</b> " + userMessage + "</div>";
+            chatbox.innerHTML += "<div class='message bot-message'><b>JCYC Bot:</b> " + data.response + "</div>";
+            chatbox.scrollTop = chatbox.scrollHeight;
             document.getElementById("userMessage").value = '';
         }
     </script>
 </head>
 <body>
-    <h1>Welcome to the OFA Terminal Chatbot!</h1>
-    <div id="chatbox" style="border: 5px solid black; padding: 10px; height: 300px; overflow-y: scroll;">
-        <p><b>JCYC Bot:</b> Hello! How can I assist you today?</p>
+    <div class="chat-container">
+        <h1>Welcome to the OFA Questionnaire Chatbot!</h1>
+        <div id="chatbox">
+            <div class="message bot-message"><b>JCYC Bot:</b> Hello! How can I assist you today?</div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userMessage" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
-    <input type="text" id="userMessage" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
-    <button onclick="sendMessage()">Send</button>
 </body>
 </html>
