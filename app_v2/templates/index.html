@@ -5,19 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
     <title>OFA Questionnaire Chatbot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('{{ url_for('static', filename='background.jpg') }}'); /* Add a background image here */
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-    </style>
+  
     <script>
         async function sendMessage() {
             const userMessage = document.getElementById("userMessage").value;
@@ -38,6 +26,7 @@
     </script>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="chat-container">
         <h1>Welcome to the OFA Questionnaire Chatbot!</h1>
         <div id="chatbox">
