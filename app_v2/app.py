@@ -7,7 +7,7 @@ from google.cloud import dialogflow
 app = Flask(__name__)
 
 # Set the path to your service account key file
-key_file_path = '/Users/samsonxu/Downloads/ofa-chatbot-45dbb77a9825.json' 
+key_file_path = r'C:\Users\Spongebob\Downloads\ofa-chatbot-9ecc385d862d.json'
 
 # Hadrian File Path: r'C:\Users\lkuc3\Downloads\ofa-chatbot-36bcf1d0cb1d.json'
 
@@ -92,6 +92,8 @@ def chat():
         response_text = fulfillment_text
 
     elif intent_name == 'communications':
+        response_text = fulfillment_text
+    elif intent_name == 'business - custom':
         response_text = fulfillment_text
 
     else:
