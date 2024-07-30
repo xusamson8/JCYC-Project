@@ -6,4 +6,4 @@ Demo Below:
 
 
 
-[![alt text](https://img.youtube.com/vi/video-id/0.jpg)](https://youtu.be/ndPN5va7pCc)
+[!](https://youtu.be/ndPN5va7pCc)
