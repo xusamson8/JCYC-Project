@@ -4,4 +4,6 @@ The OFA Bot is a conversational AI chatbot created using Google's Dialogflow API
 
 Demo Below: 
 
-<video src="/JCYC-PROJECT/ofabot_demo.mp4" width="500" height="500" controls>  </video>
+
+
+[![alt text](https://img.youtube.com/vi/video-id/0.jpg)](https://youtu.be/ndPN5va7pCc)
